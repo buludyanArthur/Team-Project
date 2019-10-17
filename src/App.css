@@ -8,19 +8,145 @@ html,
 body {
   height: 100%;
 }
-.add-book{
-  height: 30px ;
-  width: 150px;
-  border: solid 1px black;
+
+/* admin add book form */
+
+.admin-add-books{
+  margin-left: 3rem;
+  width: 65%;
+  overflow: hidden;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  
+}
+.admin-add-books h4{
+  margin: 1rem 5rem;
+  text-align: center;
+}
+.admin-add-books .float-left{
+  float: left;
+  margin-bottom: 1rem;
+}
+.admin-add-books .float-left .input-line{
+  margin: 1rem;
 }
 
+.admin-add-books .float-left .input-line .add-book{
+  height: 1.5rem ;
+  width: 100%;
+  border: solid 1px rgba(160, 97, 97, 0.2);
 
-.card-deck{
-  display: flex;
-  flex-wrap: wrap;
+}
+.admin-add-books .float-left .input-line select{
+  margin-left: 2.7rem;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+}
+.admin-add-books .float-left .upload-img{
+  margin: 0 0 1rem 2rem;
+}
+.admin-add-books .float-left button{
+  width: 30%;
+  border-radius: 4px;
+  background: rgb(10, 71, 151);
+  margin: 0 0 1rem  2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  height: 30px;
+}
+.admin-add-books .float-left button:hover{
+  background: rgba(10, 71, 151, 0.8);
+  }
+
+/* books continer */
+.books-container{
+  overflow: hidden;
   justify-content: space-between;
-  padding: 32px;
+  width: 85%;
+  margin: 1rem auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.books-container .sort-line{
+  height: 2rem;
+ display: flex;
+ align-items: center;
+}
+.books-container .sort-line label{
+  margin-left: 1rem;
+}
+.books-container .sort-line select{
+   margin-left: 0.7rem;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+ 
+}
+.books-container ul{
+  padding: 0;
+  margin: 0;
+ 
+  
+}
+.books-container ul li{
+  list-style: none;
+  float: left;
+  width: 35rem;
+  height: 480px; 
+  margin: 1rem 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+    padding: 2rem;
+ 
+}
+.books-container ul li .book-img-cont {
+  height: 260px;
+  overflow: hidden;
+}
+.books-container ul li .book-img-cont .book-img{
+  width: 90%; 
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  vertical-align: baseline;
+  height: auto;
+  outline: none;
+ 
+  }
+
+.books-container ul li .book-context{
+  position: relative;
+}
+.books-container ul li .book-context h3{
+  font-size: 18px;
+  margin-top: 0.5rem;
+  padding: 0;
 }
 
+.books-container ul li .book-context p{
+  margin: 0;
+  padding-bottom: 0.6rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.books-container ul li .book-context .price{
+  margin: 0;
+  padding:0;
+  color: rgb(10, 71, 151);
+  font-weight: 600;
 
+}
+
+.books-container ul li .book-context .add-to-card{
+  width: 80%;
+  border-radius: 4px;
+  background: rgb(10, 71, 151);
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  height: 30px;
+  cursor: pointer;
+  
+}
+.books-container ul li .book-context .add-to-card:hover{
+  background: rgba(10, 71, 151, 0.8);
+}
 

@@ -6,10 +6,9 @@ import BookCard from './components/books-list';
 function App() {
   return (
     <div className="App">
-    Book store
-    <BookCard/>
-    <AddBookForm/>
-   
+      Book store    
+      <AddBookForm/>
+      <BookCard/>          
     </div>
   );
 }
