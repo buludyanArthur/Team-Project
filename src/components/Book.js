@@ -3,6 +3,7 @@ import React from 'react';
 export const Book = (props) => {
     
       // girq vercnelu orinak@ 
+      //
       /* const  book = { 
           title: props.title,
           price: props.price, 
