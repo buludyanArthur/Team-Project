@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import firebase from '../firebase';
 import {storage} from '../firebase';
 
@@ -11,6 +11,7 @@ const AddBookForm = () => {
     const[URL, setURL]= useState(``);
     //image loading
     const[progress, setProgress]= useState(0);
+    
 
     //choose image and preview before uploading
     function handleChange (e) {
@@ -64,6 +65,7 @@ const AddBookForm = () => {
             setProgress(0);
             setURL(``);
         })
+     
 }
 
     return (
@@ -107,7 +109,7 @@ const AddBookForm = () => {
            
            <div className=" float-left upload-img">
                 <div className="upload-img">
-                    <img src={URL|| 'https://via.placeholder.com/100x120'} alt="uploaded image" height="120" width="100"/>
+                    <img src={URL|| 'https://via.placeholder.com/100x120'} alt="Preveiw" height="120" width="100"/>
                     <br/>
                     <progress value={progress} max="100"/>
                     <input type="file"  onChange = {handleChange} required/>
