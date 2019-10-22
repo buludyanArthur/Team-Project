@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import UseBooks from '../components/actions/useBook'
 import {Book} from './Book'
 
-const BooksList = () =>{
+const BookCart = () =>{
     
     const [sortBy, setSortBy] = useState('TITLE_ASC');
     const books = UseBooks(sortBy);
@@ -17,22 +17,20 @@ const BooksList = () =>{
                     <option value="TITLE_DESC">Title (Z-A)</option>
                     <option value="PRICE_ASC">Price: Low to Higth</option>
                     <option value="PRICE_DESC">Price: Higth to Low</option>
+                    
+                   {/*  <option>Publication Date</option> */}
                 </select>
 
             </div>
             <ul className="book-container">{books.map(item => 
-            <li key ={item.id}>
-            <div className="book-img-cont">
-                <img className="book-img" src={item.URL} alt={item.title}/>
-            </div> 
-                           
-                <Book title={item.title} author={item.author} price={item.price} category={item.category}/>
-            </li> 
+             <li key ={item.id}>           
+                <Book src={item.URL} title={item.title} author={item.author} price={item.price} category={item.category}/>
+             </li>
             )}
             </ul>
         </section>
     
     )
 }
-export default BooksList;
+export default BookCart;
 

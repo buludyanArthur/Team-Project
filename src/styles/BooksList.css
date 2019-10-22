@@ -38,12 +38,12 @@
    
   }
   .books-container ul li .book-img-cont {
-    height: 260px;
+    height: 240px;
     overflow: hidden;
   }
   .books-container ul li .book-img-cont .book-img{
-    width: 90%; 
-    height: 260px;
+    width: 85%; 
+    height: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +80,7 @@
     width: 80%;
     border-radius: 4px;
     background: rgb(10, 71, 151);
-    margin-top: 20px;
+    
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     height: 30px;
     cursor: pointer;

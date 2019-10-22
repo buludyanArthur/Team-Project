@@ -1,0 +1,37 @@
+.shopping-cart ol{
+    padding: 0;
+    margin: 0; 
+    list-style-position: outside;
+}
+.shopping-cart ol li{    
+    width: 80%;
+    height: 10rem; 
+    margin: 1rem 0.5rem;
+    text-align: right;    
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+      padding: 2rem;
+      display: flex;
+      justify-content: 
+    
+   
+}
+
+.shopping-cart ol li .cart-img-cont{
+    width: 20rem;
+      height: 20rem;
+      overflow: hidden;
+}
+
+.shopping-cart ol li .cart-img-cont .cart-book-img{
+    width: 40%; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+    height: auto;
+    outline: none;
+}
