@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+.container .loading{
+    height: 50px;
+    transform-origin: bottom center;
+    animation: rotate 3s linear infinite;
+}
+.container .loading .circle{
+    display: inline-block;
+    background-color: #091F2E;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    animation: grow 1.5s linear infinite;
+    transform: scale(0);
+    margin: -10px;
+
+}
+.container .loading .circle:nth-child(2){
+    background-color: rgb(7, 47, 73);
+    animation-delay: 0.75s;
+}
+@keyframes rotate{
+    to{
+        transform: rotate(360deg) ;
+    }
+}
+@keyframes grow{
+    50%{
+        transform: scale(1);
+    }
+}

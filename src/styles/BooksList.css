@@ -71,23 +71,40 @@
   .books-container ul li .book-context .price{
     margin: 0;
     padding:0;
-    color: rgb(10, 71, 151);
-    font-weight: 600;
+    color: #091F2E;
+    font-weight: 700;
   
   }
   
   .books-container ul li .book-context .add-to-cart{
     width: 80%;
     border-radius: 4px;
-    background: rgb(10, 71, 151);
-    
+    font-weight: 600;
+    background: #091F2E;  
+    color: #FFF;  
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     height: 30px;
     cursor: pointer;
-    
+        
   }
   .books-container ul li .book-context .add-to-cart:hover{
-    background: rgba(10, 71, 151, 0.8);
+    background: #FFF;
+    color: #091F2E;
+    border: 0.05rem solid #091F2E;
   }
+
+  .books-container ul li .book-context .in-cart{
+    font-weight: 700;
+    width: 80%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: 30px;
+    cursor: pointer;
+    background: #FFF;
+    color: #091F2E;
+    border: 0.05rem solid #091F2E;
+  }
+
+  
   
   

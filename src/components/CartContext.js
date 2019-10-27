@@ -1,8 +1,4 @@
 import React, {useState} from 'react';
-const defaultCartState = {
-	products: [],
-	updateProducts: () => [],
-}
 
 export const CartContext = React.createContext();
 export const CartProvider = (props) => {

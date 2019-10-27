@@ -1,11 +1,24 @@
+.shopping-cart{
+    width: 80%;
+    
+}
+.shopping-cart h1{
+    list-style: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    
+    font-weight: 700;
+    transform: translateX(-50%) translateY(-50%);
+}
 .shopping-cart ol{
     padding: 0;
-    margin: 0; 
+    margin: 2rem; 
     list-style-position: outside;
 }
 .shopping-cart ol li{    
     width: 80%;
-    height: 10rem; 
+    height:15rem;
     margin: 1rem 0.5rem;
     text-align: right;    
     overflow: hidden;
@@ -13,14 +26,14 @@
     position: relative;
       padding: 2rem;
       display: flex;
-      justify-content: 
+      justify-content: left baseline;
     
    
 }
 
 .shopping-cart ol li .cart-img-cont{
-    width: 20rem;
-      height: 20rem;
+    width: 30rem;
+      height: 30rem;
       overflow: hidden;
 }
 
@@ -34,4 +47,23 @@
     
     height: auto;
     outline: none;
+}
+button{
+    height: 20px;
+    width: 20px;
+}
+.remove-from-cart{
+    height: 20px;
+    width: 50px;
+}
+.shopping-cart ol li hr{
+    border: 0;
+    clear:both;
+    display:flex;
+    width: 98%;               
+    background-color:rgba(0, 0, 0, 0.2);
+    height: 1px;
+    justify-items: center;
+    margin: 0 2%;
+
 }

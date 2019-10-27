@@ -3,18 +3,22 @@ import { CartContext } from './CartContext';
 
 export const Book = (props) => {
     const [cart, setCart] = useContext(CartContext);
+    const [text, setText] = useState(`Add to cart`);
 
-    const book = { title: props.title, price: props.price, src: props.src };
-    //const [inCart, setInCart] = useState(true);
+    const book = {id: props.id, title: props.title, category:props.category, price: props.price, src: props.src, count: 1};
+
     function AddToCart(e) {
         e.preventDefault();
-
-
-        setCart(current => [...current, book])
-
-        // console.log(cart)
-
+        let {name} = e.target; 
+        if (text === `Add to cart` ){        
+            setCart(current => [...current, book] );        
+            setText(`In cart`);                   
+        } else{
+            setCart(cart.filter(current => current.title !== name));
+            setText(`Add to cart`);
+        }
     }
+    
     const style = { visibility: "hidden" };
 
     return (
@@ -27,7 +31,8 @@ export const Book = (props) => {
                 <p className="book-info text-muted">{props.author}</p>
                 <p className="price">{props.price} AMD</p>
                 <p style={style}>{props.category} </p>
-                <button className="add-to-cart" onClick={AddToCart}>Add To Cart</button>
+                <p style={style}>{props.id} </p>
+                <button  name={props.title} className={(text === `Add to cart`) ?`add-to-cart`:`in-cart`} onClick={AddToCart}>{text}</button>
             </div>
         </>
     )
