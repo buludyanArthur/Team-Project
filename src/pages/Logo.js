@@ -12,6 +12,7 @@ import fire from '../Config/Fire'
 import SignedIn from '../components/SignedIn'
 
 function Logo(){
+
     const[Showlist, setShowList]=useState(true)
     const[user, setUser]=useState(null)
 
@@ -20,13 +21,13 @@ function Logo(){
         })
 
     function authListener() {
-        fire.auth().onAuthStateChanged((user) => {
-            if(user){
-                setUser(user);
-                } else{
-                setUser(null);
-                }
-            });
+            fire.auth().onAuthStateChanged((user) => {
+                if(user){
+                    setUser(user);
+                    } else{
+                    setUser(null);
+                    }
+                });
     }
 
     return(

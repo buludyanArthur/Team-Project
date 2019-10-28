@@ -11,9 +11,9 @@ const BooksList = () =>{
 let category=books.map(el=>el.category);
 category = category.filter((el, index) => category.indexOf(el) === index)
 
-let categoryOptions=category.map((val)=>{
-    return <li key={`option_${val}` } >
-            <div value={val} onClick={()=>{setSelectCategory(val)}}>
+let categoryOptions = category.map((val)=>{
+    return <li key = {`option_${val}`} >
+            <div value={val} onClick={ () => {setSelectCategory(val)}}>
                 {val}
             </div>
         </li>

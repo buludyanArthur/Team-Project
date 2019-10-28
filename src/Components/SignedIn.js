@@ -10,16 +10,18 @@ function SignedIn (){
     }
 
     useEffect( () => {
-        fire.firestore().collection('users')
-        .doc(`${fire.auth().currentUser.email}`)
-        .get()
-        .then( snapshot => {
-                const user = [];
-                user.push(snapshot.data().firstName, snapshot.data().lastName)
-                setUser(user)
-            }
-        )
-    })
+        if(fire.auth.currentUser){
+            fire.firestore().collection('users')
+            .doc(`${fire.auth().currentUser.email}`)
+            .get()
+            .then( snapshot => {
+                    const user = [];
+                    user.push(snapshot.data().firstName, snapshot.data().lastName)
+                    setUser(user)
+                }
+            )
+    }}
+    )
 
     return (
         <div>

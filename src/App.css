@@ -18,9 +18,14 @@ html, body {
   overflow-x: hidden;
   background-repeat: no-repeat;
 }
-input{
-  height: 30px;
-  width: 150px;
-  border: solid 1px ;
+.carusel{
+  height: 450px;
+  width: 140%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.carusel img{
+  width: 60%;
 }
 /* #091F2E D42A2A #820505 */

@@ -2,10 +2,9 @@
 
 .admin-add-books{
     margin-left: 3rem;
-    width: 65%;
+    width: 75%;
     overflow: hidden;
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);    
   }
   .admin-add-books h4{
     margin: 1rem 5rem;
