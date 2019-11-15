@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import fire from '../Config/Fire';
+import fire from '../config/Fire';
 
 export const CartContext = React.createContext();
 export const CartProvider = (props) => {

@@ -1,5 +1,5 @@
 import  {useState, useEffect} from 'react';
-import firebase from '../../Config/Fire'
+import firebase from '../../config/Fire'
 import SORT_OPTIONS from '../options/Sort_Options';
 
 const  UseBooks = (sortBy='TITLE_ASC') =>{

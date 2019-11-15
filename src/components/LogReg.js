@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import fire from '../Config/Fire';
+import fire from '../config/Fire';
 import Loading from './loading'
 import '../styles/LogReg.css';
 import { TranslationContext } from '../translations/translations';
@@ -108,9 +108,9 @@ function LogReg () {
                     <div id='title'>{formTitle}</div>
                     <div >
                         {loadingFlag ? <Loading /> : null}
-                        <div className='errorNotification'>
+                        <small className='errorNotification'>
                             {errorNotification ? errorNotification : <br />}
-                        </div>
+                        </small>
                         <form className = "registration">
                             {loginBtn ? '' : (
                                 <div>

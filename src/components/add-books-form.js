@@ -1,6 +1,6 @@
 import React, {useState, useContext } from 'react';
-import firebase from '../Config/Fire';
-import {storage} from '../Config/Fire';
+import firebase from '../config/Fire';
+import {storage} from '../config/Fire';
 import { TranslationContext } from '../translations/translations';
 
 const AddBookForm = () => {

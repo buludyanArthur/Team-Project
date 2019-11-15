@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fire from '../Config/Fire';
+import fire from '../config/Fire';
 
 export const UserContext = React.createContext();
 export const UserProvider = ( props ) => {

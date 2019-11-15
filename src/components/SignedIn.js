@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import fire from '../Config/Fire';
+import fire from '../config/Fire';
 import { UserContext } from '../components/UserContext';
 
 import { TranslationContext } from '../translations/translations';
