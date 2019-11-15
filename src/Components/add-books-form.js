@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext } from 'react';
 import firebase from '../Config/Fire';
 import {storage} from '../Config/Fire';
+import { TranslationContext } from '../translations/translations';
 
 const AddBookForm = () => {
+    const {translate} = useContext(TranslationContext);
     const [title, setTitle] = useState(``);
     const [author, setAuthor] = useState(``);
     const [category, setCategory] = useState(``);
@@ -11,8 +13,6 @@ const AddBookForm = () => {
     const [URL, setURL]= useState(``);
     //image loading
     const[progress, setProgress]= useState(0);
-    
-    
 
     //choose image and preview before uploading
     function handleChange (e) {
@@ -25,8 +25,7 @@ const AddBookForm = () => {
                 setURL(reader.result);
             }
             reader.readAsDataURL(image)
-        }
-       
+        }       
     };
     
     function onSubmit(e) {
@@ -36,7 +35,7 @@ const AddBookForm = () => {
         (snapshot) => {
             //progress
             const progress = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-             setProgress(progress);
+            setProgress(progress);
         }, (error) => {
             //error
             console.log(error);
@@ -55,7 +54,7 @@ const AddBookForm = () => {
             author,
             category,
             price: parseInt(price),
-            URL            
+            URL           
         })
         .then(() => {
             setTitle(``);
@@ -65,28 +64,28 @@ const AddBookForm = () => {
             setImage(null);
             setProgress(0);
             setURL(``);
-        })
-     
+        })     
 }
 
-    return (
+    return ( 
+        
         <form className="admin-add-books" onSubmit={onSubmit}>
-            <h4>Add book</h4>
+            <h4>{translate('addBook')}</h4>
             <div className="float-left">
             <div className="input-line">
                 <label>Title:</label><br/>
                 <input className = "add-book" type="text" value={title} onChange ={e => setTitle(e.currentTarget.value)} placeholder="Enter book title..."required/>
             </div>
             <div className="input-line"> 
-                <label>Author:</label><br/>
+                <label>{translate('author')}:</label><br/>
                 <input className = "add-book" type="text" value={author} onChange ={e => setAuthor(e.currentTarget.value)} placeholder="Enter book author..."required/>
             </div>
             <div className="input-line">
-                <label>Price:</label><br/>
+                <label>{translate('price')}:</label><br/>
                 <input className = "add-book" type="number" value={price} onChange ={e => setPrice(e.currentTarget.value)} placeholder="Enter price..."required/>
             </div>
             <div className="input-line">
-                <label>Book category:</label>
+                <label>Category</label>
                 <select  value={category} onChange ={e => setCategory(e.currentTarget.value)}required>
                 <option value=""> ----</option>
                 
@@ -103,7 +102,7 @@ const AddBookForm = () => {
                 <option> Fantasy</option>
                 <option> Horror</option>
                 <option> Romance</option>
-                <option> Novels</option>
+                <option> {translate("novels")}</option>
             </select>
             </div>
             </div>
@@ -115,9 +114,9 @@ const AddBookForm = () => {
                     <progress value={progress} max="100"/>
                     <input type="file"  onChange = {handleChange} required/>
                 </div>
-                <button>Add book</button>
+                <button>{translate('addBook')}</button>
             </div>
-        </form>
+        </form>       
     )
 }
 export default AddBookForm;

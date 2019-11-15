@@ -1,0 +1,72 @@
+.logo{
+    
+  padding:10px;
+  padding-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.logo img{
+  width:70%;
+  padding-left: 20px;
+}
+
+  .popup{
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+    background: #FFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .logo-child{
+    color:#091F2E;
+    font-size: 20px;
+    width:500px;
+    display:flex;
+    padding-top: 30px;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+  .logo-child .cart{
+    display: contents;
+       
+  }
+ 
+  .logo-child .cart .total{
+    font-size: 20px;
+   
+  }
+  .login{
+    background: none;
+    font-weight: 600;
+  }
+  .logo-child .cart:hover{
+    font-weight: 700;
+    
+  }
+.fa-2x{
+  color: #08994a; 
+}
+ 
+  @media screen and (max-width: 600px) {
+    .logo{
+      display: flex;
+      flex-direction: column;
+     
+    }
+    .logo-child{
+      
+        font-size: 18px;
+        width:200px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .logo-child .cart .total{
+      font-size: 16px;
+    }
+    .logo img{
+      width: 50%;
+    }
+    
+  }

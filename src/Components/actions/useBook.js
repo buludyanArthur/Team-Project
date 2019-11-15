@@ -6,10 +6,10 @@ const  UseBooks = (sortBy='TITLE_ASC') =>{
     const [books, setBooks] = useState([]);
          
     useEffect(() =>{
-        const unsubscibe = firebase
+        const unsubscribe = firebase
             .firestore()
             .collection('books')
-            .orderBy(SORT_OPTIONS[sortBy].column, SORT_OPTIONS[sortBy].diraction)  
+            .orderBy(SORT_OPTIONS[sortBy].column, SORT_OPTIONS[sortBy].diraction) 
             .onSnapshot((snapshot) =>{
              const newBooks = snapshot.docs.map((doc) => ({
                 id: doc.id,
@@ -17,9 +17,9 @@ const  UseBooks = (sortBy='TITLE_ASC') =>{
             }))
             setBooks(newBooks);
         })
-        return () => unsubscibe();
+        return () => unsubscribe();
 
     }, [sortBy])
     return books;
 }
-export default UseBooks
+export default UseBooks;

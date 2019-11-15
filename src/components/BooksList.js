@@ -1,29 +1,42 @@
-import React, {useState} from 'react';
-import UseBooks from '../components/actions/useBook'
+import React, {useState, useContext} from 'react';
 import {Book} from './Book'
 import Loading from './loading';
+import UseBooks from './actions/useBook';
+import { TranslationContext } from '../translations/translations';
 
-const BooksList = () =>{    
-    const [sortBy, setSortBy] = useState('TITLE_ASC');
-    const books = UseBooks(sortBy);
+const BooksList = (props) =>{    
+    const {translate} = useContext(TranslationContext);
+    const [sortBy, setSortBy] = useState('TITLE_ASC');    
     const [selectCategory, setSelectCategory] =useState(``);
-
-let category=books.map(el=>el.category);
+    const books = UseBooks(sortBy);
+    const book=UseBooks();
+      
+let category = book.map(el => el.category);
 category = category.filter((el, index) => category.indexOf(el) === index)
 
-let categoryOptions=category.map((val)=>{
-    return <li key={`option_${val}` } >
-            <div value={val} onClick={()=>{setSelectCategory(val)}}>
+let categoryOptions = category.map((val)=>{
+    return <li id={val} key = { `option_${val}` } >
+            <div value = {val} onClick={ () => {
+                setSelectCategory(val);
+                props.history.push(props.match.url + "?category=" + val)
+                }}>
                 {val}
             </div>
         </li>
-   })  
-    return (
+   })
+     return (
         
-        <section className="book-page">
+        <section >
             {/* category */}
-            <section className="book-category">
+            <h3 className="cat">{translate('Category')}</h3>
+            <section className="book-page">
+            <section className="book-category">                
                 <ul>
+                <li key ="all">
+                    <div value = "" onClick={ () => {setSelectCategory(``)}}>
+                        All Books
+                    </div>
+                    </li>
                     {categoryOptions}
                 </ul>
             </section>
@@ -40,24 +53,29 @@ let categoryOptions=category.map((val)=>{
                 </select>
             </div>
             {(books.length === 0)? <Loading/>:(selectCategory === ``)?
-            <ul className="book-container">{
+         
+         <ul className="book-container">{
                 books.map(item => 
                     <li key ={item.title}>           
-                     <Book src={item.URL} title={item.title} author={item.author} price={item.price} category={item.category}/>
+                     <Book  id={item.id} src={item.URL} title={item.title} author={item.author} price={item.price} category={item.category}/>
                     </li>              
                      )}
+      
             </ul>
+             
             :<ul className="book-container">{
                 books.filter(item => item.category === selectCategory)
                      .map(item => 
-                        <li key ={item.title}>           
-                         <Book src={item.URL} title={item.title} author={item.author} price={item.price} category={item.category}/>
+                        <li key ={item.title}>  
+    
+                         <Book id={item.id} src={item.URL} title={item.title} author={item.author} price={item.price} category={item.category}/>
                         </li>              
                     )}
             </ul>                       
         }
-        </section>
+        </section>     
     </section>    
+    </section>
     )
 }
 export default BooksList;

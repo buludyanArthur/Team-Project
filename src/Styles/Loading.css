@@ -2,7 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: 334px;
+    z-index: 2222222222222;
+    position: absolute;
+    background: #FFF;
+    margin-top: 0;
 }
 .container .loading{
     height: 50px;
@@ -21,7 +25,7 @@
 
 }
 .container .loading .circle:nth-child(2){
-    background-color: rgb(7, 47, 73);
+    background-color: #08994a;
     animation-delay: 0.75s;
 }
 @keyframes rotate{

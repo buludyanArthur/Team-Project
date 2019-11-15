@@ -1,18 +1,18 @@
 import React, {useReducer} from 'react';
 
 import EN from '../locale/en.json';
-import RU from '../locale/ru.json';
+import ARM from '../locale/arm.json';
 
 const translations = {
-    en: EN,
-    ru: RU,
+    En: EN,
+    Հայ: ARM,
 };
 
 const getTranslate = langCode => key => translations[langCode][key] || key;
 
 const initialState = {
-    langCode: "ru",
-    translate: getTranslate("ru"),
+    langCode: "En",
+    translate: getTranslate("En"),
 };
 
 export const TranslationContext = React.createContext(initialState);

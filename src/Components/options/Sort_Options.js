@@ -4,6 +4,5 @@ const SORT_OPTIONS = {
 
     'PRICE_ASC': {column: 'price', diraction: 'asc'},
     'PRICE_DESC': {column: 'price', diraction: 'desc'},
-
 }
 export default SORT_OPTIONS;

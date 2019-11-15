@@ -1,54 +1,74 @@
-import React from 'react';
-import {render} from 'react-dom'
+import React, { useState, useEffect, useContext, Suspense, lazy } from 'react';
 import './App.css';
-import AddBookForm from './components/add-books-form';
-import BooksList from './components/BooksList';
-import {Cart} from './components/Cart'
-import {CartProvider} from './components/CartContext'
-import {CartPage} from './pages/CartPage'
-
-
-import {BrowserRouter as Router} from 'react-router-dom';
-import {ShowCart} from './components/ShowCart'
-import Loading from './components/loading'
-import Header from './pages/Header'
+import { CartProvider } from './components/CartContext';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Loading from './components/loading';
+import Header from './pages/Header';
 import Logo from './pages/Logo';
-import{Switch,Route} from 'react-router-dom';
-import AboutUs from './pages/AboutUs'; 
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Books from './pages/Books'
-import BookCart from './components/BooksList';
-import SearchBook from './components/searchBook'
+import Footer from './pages/Footer';
+import { Switch, Route, Link } from 'react-router-dom';
+import LanguageSelect from './translations/LanguageSelect';
+import ErrorBoundary from './components/ErrorBoundary';
+import { UserContext } from './components/UserContext';
+
+const Home = lazy(() => import("./pages/Home"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Books = lazy(() => import("./pages/Books"));
+const AddBooks = lazy(() => import("./pages/AddBooks"));
+const CartPage = lazy(() => import('./pages/CartPage'));
+
 
 function App() {
-  return (   
-    
-    <div className="App">
-       
-      <Router>
-       <CartProvider> 
-        
 
-       <Logo/>      
+  const userContext = useContext(UserContext)
+
+  let [showTopButton, setShowTopButton] = useState(false);
+  useEffect(() => {
     
-            <Header/> 
-            
-            <Switch>
-              <Route path='/' exact component={Home}/>
-              <Route path='/aboutus' exact component={AboutUs}/>
-              <Route path='/contact' exact component={Contact}/>
-              <Route path='/books' exact component={Books}/>
-              <Route path='/pages/cartPage' exact component={CartPage}/>
-            </Switch>    
-            
-       </CartProvider>
-       </Router>
-      
-       
-        </div>
-       
-       
+    function scrollListener(e) {
+      setShowTopButton(document.body.scrollTop > 200);
+    }
+    document.body.addEventListener("scroll", scrollListener);
+    return () => {
+      document.body.removeEventListener("scroll", scrollListener);
+    }
+  }, [])
+
+  const scrollTop = (
+    <div
+      className='scrollTop-button'
+      onClick={(e) => document.body.scrollTop = 0}
+    >
+    </div>
+  )
+
+  return (
+    <div className="App">
+      <ErrorBoundary>
+        <Router>
+          <CartProvider>
+            <Logo as={Link} to='/' />
+            <LanguageSelect/>
+            <Header />
+            <Suspense fallback={<Loading/>}>
+              <Switch>
+              {userContext ? userContext.email === 'admin@gmail.com' ?
+                <Route path='/addbooks' exact component={AddBooks} />: null : null}            
+                <Route path='/' exact component={Home} />
+                <Route path='/aboutus' exact component={AboutUs} />
+                <Route path='/contact' exact component={Contact} />
+                <Route path='/books' exact component={Books} />
+                <Route path='/pages/cartPage' exact component={CartPage} />
+              </Switch>
+              <Footer/>
+            </Suspense>
+          </CartProvider>
+        </Router>      
+      </ErrorBoundary>
+      {showTopButton ? scrollTop : null}
+     
+    </div>
   );
 }
 

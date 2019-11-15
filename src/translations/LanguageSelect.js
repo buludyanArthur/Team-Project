@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 
 import { TranslationContext } from './translations';
 
+import "../styles/translations.css"
+
 const LanguageSelect = props => {
   const { langCode, dispatch } = useContext(TranslationContext);
 
@@ -15,9 +17,10 @@ const LanguageSelect = props => {
   );
   
   return (
-    <select onChange={onLanguageSelect} defaultValue={'DEFAULT'}>
-      {renderOption("en")}
-      {renderOption("ru")}
+    <select className = "lang-dropdown-content"  onChange={onLanguageSelect} defaultValue={'DEFAULT'}>
+      {renderOption("En")}
+      {renderOption("Հայ")}
+
     </select>
   );
 };

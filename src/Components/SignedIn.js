@@ -1,39 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import fire from '../Config/Fire';
+import { UserContext } from '../components/UserContext';
+
+import { TranslationContext } from '../translations/translations';
+
 
 function SignedIn (){
-    const[user, setUser]=useState(null)
-
+    const {translate} = useContext(TranslationContext);
+    const userContext = useContext(UserContext);
 
     function logout() {
         fire.auth().signOut();
     }
 
-    useEffect( () => {
-        fire.firestore().collection('users')
-        .doc(`${fire.auth().currentUser.email}`)
-        .get()
-        .then( snapshot => {
-                const user = [];
-                user.push(snapshot.data().firstName, snapshot.data().lastName)
-                setUser(user)
-            }
-        )
-    })
-
     return (
         <div>
             {
-                user &&
-                user.map( user => {
-                    return (
-                        <small>
-                            {user}<br/>
-                        </small>
-                    )
-                })
+                userContext && (<small key={userContext.uid} className='userName'>{userContext.firstName} {userContext.lastName}</small>)
             }
-            <button onClick={logout}>Logout</button>
+            <br/>
+            <button className="logout" onClick={logout}>{translate('logout')}</button>
         </div>
     )
 }
