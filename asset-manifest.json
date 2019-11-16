@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/Team-Project/static/css/main.ecbc77f8.chunk.css",
+    "main.js": "/Team-Project/static/js/main.05501813.chunk.js",
+    "main.js.map": "/Team-Project/static/js/main.05501813.chunk.js.map",
+    "runtime-main.js": "/Team-Project/static/js/runtime-main.3b21322a.js",
+    "runtime-main.js.map": "/Team-Project/static/js/runtime-main.3b21322a.js.map",
+    "static/js/2.1d0749cc.chunk.js": "/Team-Project/static/js/2.1d0749cc.chunk.js",
+    "static/js/2.1d0749cc.chunk.js.map": "/Team-Project/static/js/2.1d0749cc.chunk.js.map",
+    "static/js/3.53c8a004.chunk.js": "/Team-Project/static/js/3.53c8a004.chunk.js",
+    "static/js/3.53c8a004.chunk.js.map": "/Team-Project/static/js/3.53c8a004.chunk.js.map",
+    "static/css/4.228ab2f0.chunk.css": "/Team-Project/static/css/4.228ab2f0.chunk.css",
+    "static/js/4.151cf6bf.chunk.js": "/Team-Project/static/js/4.151cf6bf.chunk.js",
+    "static/js/4.151cf6bf.chunk.js.map": "/Team-Project/static/js/4.151cf6bf.chunk.js.map",
+    "static/js/5.21a21edb.chunk.js": "/Team-Project/static/js/5.21a21edb.chunk.js",
+    "static/js/5.21a21edb.chunk.js.map": "/Team-Project/static/js/5.21a21edb.chunk.js.map",
+    "static/js/6.84229f47.chunk.js": "/Team-Project/static/js/6.84229f47.chunk.js",
+    "static/js/6.84229f47.chunk.js.map": "/Team-Project/static/js/6.84229f47.chunk.js.map",
+    "static/js/7.92d9fc5c.chunk.js": "/Team-Project/static/js/7.92d9fc5c.chunk.js",
+    "static/js/7.92d9fc5c.chunk.js.map": "/Team-Project/static/js/7.92d9fc5c.chunk.js.map",
+    "static/js/8.bc7209e1.chunk.js": "/Team-Project/static/js/8.bc7209e1.chunk.js",
+    "static/js/8.bc7209e1.chunk.js.map": "/Team-Project/static/js/8.bc7209e1.chunk.js.map",
+    "index.html": "/Team-Project/index.html",
+    "precache-manifest.9f7ec96529f13170a7cdc9973d9be940.js": "/Team-Project/precache-manifest.9f7ec96529f13170a7cdc9973d9be940.js",
+    "service-worker.js": "/Team-Project/service-worker.js",
+    "static/css/4.228ab2f0.chunk.css.map": "/Team-Project/static/css/4.228ab2f0.chunk.css.map",
+    "static/css/main.ecbc77f8.chunk.css.map": "/Team-Project/static/css/main.ecbc77f8.chunk.css.map",
+    "static/media/logo.png": "/Team-Project/static/media/logo.da6ec07e.png",
+    "static/media/slide_1.jpg": "/Team-Project/static/media/slide_1.67137dca.jpg",
+    "static/media/slide_2.jpg": "/Team-Project/static/media/slide_2.d2707581.jpg",
+    "static/media/slide_3.jpg": "/Team-Project/static/media/slide_3.0736f682.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b21322a.js",
+    "static/js/2.1d0749cc.chunk.js",
+    "static/css/main.ecbc77f8.chunk.css",
+    "static/js/main.05501813.chunk.js"
+  ]
+}
