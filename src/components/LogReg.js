@@ -16,7 +16,6 @@ function LogReg () {
     const[fireErrors, setFireErrors]=useState('')
     const[formTitle, setFormTitle]=useState(translate('login'))
     const[loginBtn, setLoginBtn]=useState(true)
-    const[loadingFlag, setLoadingFlag]=useState(false)
 
     const regName = RegExp(/^[A-Z][a-z]{1,}$/);
     const regEmail = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
@@ -45,7 +44,6 @@ function LogReg () {
                             lastName: lastName,
                             address: address
                         });
-                        setLoadingFlag(true);
                     }
                 }
                 else{
@@ -89,7 +87,7 @@ function LogReg () {
     }
 
     let errorNotification = fireErrors ? 
-    ( <div className='Error'> {fireErrors} </div> ) : null;
+    ( <div className='Error'> {fireErrors} </div> ) : '';
 
     let submitBtn = loginBtn ? 
         (<input className = "reg" type='submit' onClick={login} value={translate('login')} />) : 
@@ -106,8 +104,7 @@ function LogReg () {
                 <div className='formContent'>
                     <div className='close' onClick={close}>+</div>
                     <div id='title'>{formTitle}</div>
-                    <div >
-                        {loadingFlag ? <Loading /> : null}
+                    <div>
                         <small className='errorNotification'>
                             {errorNotification ? errorNotification : <br />}
                         </small>
