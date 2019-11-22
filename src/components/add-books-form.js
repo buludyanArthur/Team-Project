@@ -43,7 +43,8 @@ const AddBookForm = () => {
         () => {
             //complate
             storage.ref('images').child(image.name).getDownloadURL()
-                .then(URL => setURL(URL))
+               // .then(URL => setURL(URL))
+            setProgress(0);
         });           
               
         firebase
@@ -62,7 +63,6 @@ const AddBookForm = () => {
             setCategory(``);
             setPrice(``);
             setImage(null);
-            setProgress(0);
             setURL(``);
         })     
 }
