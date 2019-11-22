@@ -106,7 +106,7 @@ function LogReg () {
                     <div id='title'>{formTitle}</div>
                     <div>
                         <small className='errorNotification'>
-                            {errorNotification ? errorNotification : <div> <br /><div />}
+                            {errorNotification ? errorNotification : <small> <br /><small />}
                         </small>
                         <form className = "registration">
                             {loginBtn ? '' : (
