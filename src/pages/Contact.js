@@ -10,7 +10,7 @@ export default function Contact () {
   const userContext = useContext(UserContext)
 
   return (
-     <form id="contactform" action="//formspree.io/lil.hovh77@gmail.com" method="POST">
+     <form id="contactform" action="//formspree.io/merihak2000@gmail.com" method="POST">
       <fieldset id="fs-frm-inputs">
 	<div className="row">
   <div className="col-md-3">
