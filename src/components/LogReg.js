@@ -79,6 +79,7 @@ function LogReg () {
     }
 
     function signIn () {
+        setFireErrors('');
         document.querySelector('.formBlock').style.display = 'flex';
     }
 
