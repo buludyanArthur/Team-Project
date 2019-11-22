@@ -87,7 +87,7 @@ function LogReg () {
     }
 
     let errorNotification = fireErrors ? 
-    ( <div className='Error'> {fireErrors} </div> ) : '';
+    ( <div className='Error'> {fireErrors} </div> ) : null;
 
     let submitBtn = loginBtn ? 
         (<input className = "reg" type='submit' onClick={login} value={translate('login')} />) : 
@@ -106,7 +106,7 @@ function LogReg () {
                     <div id='title'>{formTitle}</div>
                     <div>
                         <small className='errorNotification'>
-                            {errorNotification ? errorNotification : <br />}
+                            {errorNotification ? errorNotification : <div> <br /><div />}
                         </small>
                         <form className = "registration">
                             {loginBtn ? '' : (
